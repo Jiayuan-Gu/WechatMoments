@@ -1,0 +1,214 @@
+body {
+    /*min-height: 100vh;*/
+    --interface_width: 360px;
+    --interface_height: 640px;
+    --header_ratio: 214 / 1080;
+    --footer_ratio: 251 / 1080;
+}
+
+div#interface {
+    width: var(--interface_width);
+    height: var(--interface_height);
+    margin: auto;
+    position: relative;
+    border: 1px solid #818181;
+    box-sizing: content-box;
+    /*box-shadow: 4px 3px 3px #111;*/
+    /*background: white;*/
+    /*display: block;*/
+}
+
+#interface div, #interface img {
+    box-sizing: border-box;
+    display: block;
+    /*overflow: hidden;*/
+}
+
+#interface > div.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+#interface > div.footer {
+    width: 100%;
+    display: block;
+    position: sticky;
+    top: 100%;
+}
+
+div#container{
+    --margin_ratio: 36 / 1080;
+    padding: calc(var(--margin_ratio) * var(--interface_width));
+    width: 100%;
+    height: calc(var(--interface_height) - (var(--header_ratio) + var(--footer_ratio)) * var(--interface_width));
+    background: white;
+    overflow: auto;
+}
+
+#container::-webkit-scrollbar {
+    width: 0;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+div#content {
+    width: 100%;
+    display: flex;
+}
+
+#content .font-link {
+    color: #5A6E90;
+}
+
+#content .font-0 {
+    --font_ratio: 14 / 360;
+    font-size: calc(var(--font_ratio) * var(--interface_width));
+}
+
+#content .font-1 {
+    --font_ratio: 10 / 360;
+    font-size: calc(var(--font_ratio) * var(--interface_width));
+}
+
+#content #avatar_self {
+    --avatar_self_ratio: 126 / 1080;
+    --avatar_self_size: calc(var(--avatar_self_ratio) * var(--interface_width));
+    --margin_ratio: 2 / 42;
+    height: var(--avatar_self_size);
+    width: var(--avatar_self_size);
+    padding: calc(var(--margin_ratio) * var(--avatar_self_size));
+    border: 1px solid #C1C1C1;
+    flex: none
+}
+
+#content #moment {
+    --margin_ratio: 24 / 1080;
+    padding-left: calc(var(--margin_ratio) * var(--interface_width));
+    flex: 1
+}
+
+#moment .font-1{
+    color: #818181;
+}
+
+#moment > :first-child {
+    margin-top: 0 !important;
+}
+
+#moment > :last-child {
+    margin-bottom: 0 !important;
+}
+
+#moment > .text {
+    --margin_ratio: 3 / 360;
+    margin: calc(var(--margin_ratio) * var(--interface_width)) 0;
+    --padding_ratio: 60 / 1080;
+    padding-right: calc(var(--padding_ratio) * var(--interface_width));
+}
+
+#moment > .article_link {
+    --margin_ratio: 8 / 360;
+    --height_ratio: 186 / 1080;
+    --hor_size: calc(var(--margin_ratio) * var(--interface_width));
+    --article_link_height: calc(var(--height_ratio) * var(--interface_width));
+    margin: var(--hor_size) 0;
+    width: 100%;
+    height: var(--article_link_height);
+    box-sizing: border-box;
+    background: #ECECEC;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#moment > .article_link > * {
+    --margin_ratio: 7 / 360;
+    --hor_size: calc(var(--margin_ratio) * var(--interface_width));
+    margin: var(--hor_size);
+    max-height: calc(var(--article_link_height) - 2 * var(--hor_size));
+}
+
+#moment > .footnote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#moment > .footnote > div {
+    display: inline;
+}
+
+#moment > .footnote > img{
+    --height_ratio: 14 / 360;
+    max-height: calc(var(--height_ratio) * var(--interface_width));
+    display: inline;
+}
+
+div#like_board {
+    --margin_ratio: 72 / 1080;
+    --bg_color: #EEEEEE;
+    margin-top: calc(var(--margin_ratio) * var(--interface_width));
+    width: 100%;
+    /*border: 1px solid #C1C1C1;*/
+}
+
+#like_board div.triangle {
+    --triangle_ratio: 8 / 360;
+    --triangle_size: calc(var(--triangle_ratio) * var(--interface_width));
+    width: 0;
+    height: 0;
+    border-left: var(--triangle_size) solid transparent;
+    border-right: var(--triangle_size) solid transparent;
+    border-bottom: var(--triangle_size) solid var(--bg_color);
+    position: relative;
+    left: var(--triangle_size);
+    box-sizing: border-box;
+}
+
+#like_board div.rectangle {
+    --ver_ratio: 7.8 / 1080;
+    --ver_size: calc(var(--ver_ratio) * var(--interface_width));
+    --hor_size: calc(2 * var(--ver_size));
+    --grid_ratio: 98.1 / 1080;
+    --grid_size: calc(var(--grid_ratio) * var(--interface_width));
+    padding: var(--ver_size) 0;
+    background: var(--bg_color);
+    display: flex;
+    justify-content: space-between;
+}
+
+#like_board div.rectangle div.sidebar {
+    width: var(--grid_size);
+    /*height: 100%;*/
+    flex: none;
+}
+
+#like_board div.rectangle .grid {
+    width: var(--grid_size);
+    height: var(--grid_size);
+    margin: var(--ver_size) var(--hor_size) var(--ver_size) 0;
+}
+
+svg[name=heart]{
+    width: 100%;
+    height: 100%;
+    padding: 25%;
+    box-sizing: border-box;
+}
+
+svg[name=heart] path {
+    /*stroke: #516485;*/
+    fill: #516485;
+    stroke-width: 10;
+}
+
+#like_board div.rectangle div.board {
+    flex: 1;
+    /*border: 1px solid #0c991e;*/
+}
+
+#like_board div.rectangle div.board .grid{
+    float: left;
+}
+
+

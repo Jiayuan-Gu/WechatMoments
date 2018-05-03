@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+        <title>Wechat Moments</title>
+        <meta name="description" content="HTML5 to mimic Wechat Moments">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div id="interface" class="mobile">
+            <div class="header">
+                <img src="img/interface/mobile_header.png" alt="mobile status header" width="100%">
+                <img src="img/interface/wechat_header.png" alt="wechat title header" width="100%">
+            </div><!-- header -->
+
+            <div id="container">
+                <div id="content">
+                    <img id="avatar_self" src="img/avatar/me.png" alt="my avatar"><!--your avatar-->
+
+                    <div id="moment">
+                        <div class="font-link font-0 text">
+                            Your name
+                        </div>
+                        <div class="text font-0">
+                            <!--完全端到端的物体检测框架，欢迎使用和交流。-->
+                            Your text here
+                        </div>
+
+                        <div class="article_link font-0">
+                            <img src="img/avatar/me.png" alt="my avatar">
+                            <div>custom article link...</div>
+                            <!-- Adjust the text according to the length.
+                            I have not figured out how to automatically wrap by overflow and whitespace-->
+                        </div>
+
+                        <!-- Your might also just snapshot an article link to replace-->
+                        <!--<img class="article_link" src="img/article_link.png" alt="article link">-->
+
+                        <div class="footnote">
+                            <div class="font-1">
+                                <span class="datetime">2017年12月3日 12:08</span>
+                                <span class="font-link">删除</span>
+                            </div>
+                            <img src="img/interface/comment_icon.png" alt="comment icon">
+                        </div>
+                    </div>
+
+                </div><!-- content -->
+
+                <div id="like_board">
+                    <div class="triangle"></div>
+                    <div class="rectangle">
+                        <div class="sidebar">
+                            <div class="grid">
+                                <!-- required to wrap in div, otherwise strange margin -->
+                                <svg name="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path>
+                                 </svg>
+                            </div>
+                        </div>
+                        <div class="board" num_display="15">
+                            <img class="grid" src="img/avatar/me.png" alt="me">
+                            <!-- index.js will automatically append other avatars according to num_display-->
+                        </div>
+                    </div>
+                </div><!-- like_board -->
+            </div><!-- container -->
+
+            <div class="footer">
+                <img src="img/interface/wechat_footer.png" alt="mobile status header" width="100%">
+                <img src="img/interface/mobile_footer.png" alt="wechat title header" width="100%">
+            </div><!-- footer -->
+        </div><!-- interface -->
+    </body>
+</html>
