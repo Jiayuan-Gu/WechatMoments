@@ -1,7 +1,7 @@
 body {
     /*min-height: 100vh;*/
-    --interface_width: 360px;
-    --interface_height: 640px;
+    --interface_width: 360px;  /* change according to your own phone */
+    --interface_height: 640px; /* change according to your own phone */
     --header_ratio: 214 / 1080;
     --footer_ratio: 251 / 1080;
 }
